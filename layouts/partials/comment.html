@@ -57,6 +57,44 @@
             </noscript>
         {{- end -}}
 
+        {{- /* Waline Comment System */ -}}
+        {{- $waline := $comment.waline | default dict -}}
+        {{- if $waline.enable -}}
+            <link rel="stylesheet" href="{{ $waline.css }}"/>
+            <div id="waline" class="comment"></div>
+            <!-- <script src="{{ $waline.js }}"></script> -->
+
+            <!-- <script>
+                new Waline({
+                    el: '#waline',
+                    serverURL: '{{ $waline.serverURL }}',
+                    copyright: true,
+                    login: {{ $waline.login }},
+                    placeholder: {{ $waline.placeholder }},
+                    dark: 'body[theme="dark"]',
+                    requiredMeta: {{ $waline.requiredMeta }},
+                    uploadImage: {{ $waline.uploadImage | default false }},
+                });
+            </script> -->
+            <script type="module">
+                import { init } from '{{ $waline.js }}';
+            
+                init({
+                    el: '#waline',
+                    login: {{ $waline.login }},
+                    serverURL: {{ $waline.serverURL }},
+                    dark: 'body[theme="dark"]',
+                    placeholder: {{ $waline.placeholder }},
+                    meta: {{ $waline.meta }},
+                    requiredMeta: {{ $waline.requiredMeta }},
+                    emoji: {{ $waline.emoji }},
+                    copyright: {{ $waline.copyright }},
+                    imageUploader: {{ $waline.imageUploader | default false }},
+                    locale: {placeholder: {{ $waline.placeholder }} },
+                });
+              </script>
+        {{- end -}}
+
         {{- /* Facebook Comment System */ -}}
         {{- $facebook := $comment.facebook | default dict -}}
         {{- if $facebook.enable -}}
