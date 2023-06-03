@@ -593,3 +593,11 @@ rss:
   Newtab: true
   Icon:
     Class: fas fa-rss fa-fw
+
+# 0101: Xbox
+xbox:
+  Weight: 39
+  Prefix: https://steamcommunity.com/id/
+  Title: XBOX
+  Icon:
+    Class: fab fa-xbox fa-fw
