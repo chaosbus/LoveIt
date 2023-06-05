@@ -32,7 +32,7 @@
             <div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork">
                 {{- if ne .Site.Params.footer.hugo false -}}
                     <!-- {{- $hugo := printf `<a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo %v">Hugo</a>` hugo.Version -}} -->
-                    {{- $hugo := printf `<a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Powered by Hugo %v"><img src="https://img.shields.io/badge/Hugo-%v-yellow?style=flat&logo=hugo"></a>` hugo.Version hugo.Version -}}
+                    {{- $hugo := printf `<a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Powered by Hugo"><img src="https://img.shields.io/badge/Powered By-Hugo-orange?style=flat&logo=hugo"></a>` -}}
                     <!-- {{- $theme := .Scratch.Get "version" | printf `<a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt %v"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>` -}} -->
                     {{- $theme := .Scratch.Get "version" | printf `<a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt %v"><img src="https://img.shields.io/badge/Theme-LoveIt-green?style=flat"></a></a>` -}}
                     <!-- {{- dict "Hugo" $hugo "Theme" $theme | T "poweredBySome" | safeHTML }} -->
@@ -41,6 +41,8 @@
                     <sppan>{{- $hugo | safeHTML }}</sppan>
                     <span class="hugo-splitter">&nbsp;&nbsp;</span><br class="icp-br"/>
                     <sppan>{{ $theme | safeHTML}}</sppan>
+                    <span class="hugo-splitter">&nbsp;&nbsp;</span><br class="icp-br"/>
+                    <sppan><a href="https://www.aliyun.com/product/oss" target="_blank" rel="noopener noreffer" title="OSS"><img src="https://img.shields.io/badge/OSS-Aliyun-purple?style=flat"></a></a></sppan>
                 {{- end -}}
 
                 {{- /* License */ -}}
